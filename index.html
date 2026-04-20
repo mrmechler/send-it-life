@@ -14,7 +14,6 @@
     content="Trusting God through steep drops, switchbacks, and life’s rough terrain."
   />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1508973378893-3f8f20b67a55?auto=format&fit=crop&w=1600&q=80" />
   <meta name="theme-color" content="#0b0a08" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -82,9 +81,10 @@
     }
 
     .hero .poster {
-      background-image: url("https://images.unsplash.com/photo-1508973378893-3f8f20b67a55?auto=format&fit=crop&w=1800&q=80");
-      background-size: cover;
-      background-position: center;
+      background:
+        linear-gradient(180deg, rgba(8,7,6,0.28), rgba(8,7,6,0.55), rgba(8,7,6,0.9)),
+        radial-gradient(circle at top, rgba(220,171,92,0.12), transparent 35%),
+        #000;
       z-index: 0;
     }
 
@@ -93,7 +93,7 @@
       inset: 0;
       background:
         radial-gradient(circle at top, rgba(220,171,92,0.16), transparent 34%),
-        linear-gradient(180deg, rgba(8,7,6,0.22), rgba(8,7,6,0.52), rgba(8,7,6,0.90));
+        linear-gradient(180deg, rgba(8,7,6,0.18), rgba(8,7,6,0.48), rgba(8,7,6,0.90));
       z-index: 2;
     }
 
@@ -102,7 +102,7 @@
       z-index: 3;
       min-height: 100svh;
       display: flex;
-      align-items: end;
+      align-items: flex-end;
       padding: 120px 0 72px;
     }
 
@@ -117,7 +117,6 @@
 
     .hero h1,
     .statement,
-    .statement-large,
     .trail-link,
     .cta-btn {
       font-family: "Oswald", sans-serif;
@@ -237,7 +236,7 @@
       line-height: 1.05;
       letter-spacing: -0.02em;
       font-weight: 700;
-      transition: background 0.2s ease, color 0.2s ease;
+      transition: background 0.2s ease;
     }
 
     .trail-link + .trail-link {
@@ -276,12 +275,14 @@
         padding: 18px 0;
       }
 
-      .cta-btn {
+      .cta-btn,
+      .footer-actions .cta-btn {
         width: 100%;
       }
 
-      .footer-actions .cta-btn {
-        width: 100%;
+      .eyebrow,
+      .trailhead-label {
+        letter-spacing: 0.28em;
       }
     }
   </style>
@@ -290,9 +291,8 @@
   <section class="hero">
     <div class="poster"></div>
 
-    <video autoplay muted loop playsinline preload="auto" poster="https://images.unsplash.com/photo-1508973378893-3f8f20b67a55?auto=format&fit=crop&w=1800&q=80">
-      <source src="/hero/send-it-hero.webm" type="video/webm" />
-      <source src="/hero/send-it-hero.mp4" type="video/mp4" />
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="send-it-hero.mp4" type="video/mp4" />
     </video>
 
     <div class="overlay-dark"></div>
@@ -401,8 +401,7 @@
         We meet.<br />
         We ride.<br />
         We talk.<br />
-        We pray.<br />
-        We send it to God.
+        We send it to God in prayer.
       </p>
     </div>
   </section>
