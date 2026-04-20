@@ -4,24 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Send It | Austin Mountain Biking Life Group</title>
-  <meta
-    name="description"
-    content="Send It is an Austin mountain biking life group for people from Life.Church and Red Rocks who want to ride, fellowship, and trust God through steep drops, switchbacks, and rough terrain."
-  />
-  <meta property="og:title" content="Send It" />
-  <meta
-    property="og:description"
-    content="Trusting God through steep drops, switchbacks, and life’s rough terrain."
-  />
-  <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#0b0a08" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -30,67 +16,48 @@
       --bg-3: #12100d;
       --text: #fff8ef;
       --muted: #dccbb8;
-      --muted-2: #cdbca8;
       --accent: #d8b07a;
       --accent-dark: #8f6a3d;
-      --line: rgba(255, 255, 255, 0.1);
+      --line: rgba(255,255,255,0.1);
       --max: 1120px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
       background: var(--bg);
       color: var(--text);
       font-family: "Inter", sans-serif;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
     }
 
     .wrap {
-      width: min(var(--max), calc(100% - 48px));
+      width: min(var(--max), calc(100% - 40px));
       margin: 0 auto;
     }
 
     .launch-banner {
       position: fixed;
       top: 0;
-      left: 0;
       width: 100%;
       z-index: 9999;
-      background: rgba(11, 10, 8, 0.82);
+      background: rgba(11,10,8,0.85);
       color: var(--accent);
       text-align: center;
       font-family: "Oswald", sans-serif;
       font-size: 11px;
       letter-spacing: 0.22em;
+      padding: 10px;
       text-transform: uppercase;
-      padding: 10px 14px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(8px);
     }
 
     .hero {
       position: relative;
-      min-height: 100svh;
+      min-height: 100vh;
       overflow: hidden;
-      background: #000;
     }
 
-    .hero video,
-    .hero .poster {
+    .hero video {
       position: absolute;
       inset: 0;
       width: 100%;
@@ -98,334 +65,184 @@
       object-fit: cover;
     }
 
-    .hero .poster {
-      background:
-        linear-gradient(180deg, rgba(8, 7, 6, 0.18), rgba(8, 7, 6, 0.42), rgba(8, 7, 6, 0.88)),
-        #000;
-      z-index: 0;
-    }
-
-    .overlay-dark {
+    .overlay {
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(circle at top, rgba(220, 171, 92, 0.12), transparent 34%),
-        linear-gradient(180deg, rgba(8, 7, 6, 0.08), rgba(8, 7, 6, 0.28) 42%, rgba(8, 7, 6, 0.88) 100%);
-      z-index: 2;
+      background: linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.8));
     }
 
     .hero-inner {
       position: relative;
-      z-index: 3;
-      min-height: 100svh;
+      z-index: 2;
+      min-height: 100vh;
       display: flex;
       align-items: flex-end;
-      padding: 122px 0 42px;
+      padding: 120px 0 50px;
     }
 
-    .eyebrow,
-    .trailhead-label {
+    h1 {
+      font-family: "Oswald";
+      font-size: 5rem;
       margin: 0;
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-    }
-
-    .hero h1,
-    .statement,
-    .trail-link,
-    .cta-btn {
-      font-family: "Oswald", sans-serif;
-      text-transform: uppercase;
-    }
-
-    .hero h1 {
-      margin: 14px 0 0;
-      font-size: clamp(3.8rem, 13vw, 8.5rem);
-      line-height: 0.9;
-      letter-spacing: -0.04em;
-      font-weight: 700;
     }
 
     .hero-sub {
-      margin: 18px 0 0;
-      max-width: 760px;
-      font-size: clamp(1.05rem, 4.5vw, 2rem);
-      line-height: 1.35;
-      color: #f3e7d6;
-      font-weight: 500;
-    }
-
-    .image-break {
-      position: relative;
-      height: 72vh;
-      overflow: hidden;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: #000;
-    }
-
-    .image-break img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 38%;
-      transform: scale(1.02);
-    }
-
-    .image-break::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(180deg, rgba(11, 10, 8, 0.1), rgba(11, 10, 8, 0.25), rgba(11, 10, 8, 0.72)),
-        radial-gradient(circle at center, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.28));
+      margin-top: 10px;
+      max-width: 500px;
+      color: var(--muted);
     }
 
     .section {
+      padding: 70px 0;
       border-top: 1px solid var(--line);
-      padding: 64px 0;
     }
 
-    .section.bg-2 {
-      background: var(--bg-2);
-    }
-
-    .section.bg-3 {
-      background: var(--bg-3);
-    }
+    .bg-2 { background: var(--bg-2); }
+    .bg-3 { background: var(--bg-3); }
 
     .statement {
-      margin: 0;
-      max-width: 980px;
-      font-size: clamp(2rem, 6.5vw, 4.5rem);
-      line-height: 1.02;
-      letter-spacing: -0.03em;
-      font-weight: 700;
+      font-family: "Oswald";
+      font-size: 2.5rem;
+      line-height: 1.1;
     }
 
     .support {
-      margin: 22px 0 0;
-      max-width: 700px;
-      color: var(--muted-2);
-      font-size: clamp(1.05rem, 3.8vw, 1.6rem);
-      line-height: 1.55;
+      margin-top: 20px;
+      color: var(--muted);
+      line-height: 1.6;
     }
 
-    .trailhead-list {
-      margin-top: 22px;
+    .image-break {
+      height: 70vh;
+      overflow: hidden;
+    }
+
+    .image-break img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+    }
+
+    .trailhead-label {
+      font-family: "Oswald";
+      letter-spacing: 0.2em;
+      font-size: 12px;
+      color: var(--accent);
+      text-transform: uppercase;
     }
 
     .trail-link {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      padding: 18px 0;
-      border-top: 1px solid var(--line);
+      padding: 20px 0;
       border-bottom: 1px solid var(--line);
-      color: var(--text);
-      font-size: clamp(1.35rem, 4vw, 3rem);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      font-weight: 700;
-      transition: background 0.2s ease;
+      font-family: "Oswald";
+      font-size: 1.5rem;
     }
 
-    .trail-link + .trail-link {
-      margin-top: 12px;
+    /* RESOURCE CARDS */
+    .resources-title {
+      text-align: center;
+      font-family: Oswald;
+      font-size: 2rem;
+      margin-bottom: 30px;
     }
 
-    .trail-link:hover {
-      background: rgba(255, 255, 255, 0.03);
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
     }
 
-    .trail-link span:last-child {
-      color: var(--accent);
-      flex-shrink: 0;
+    .resource-card {
+      border: 1px solid var(--line);
+      padding: 20px;
     }
 
-    .footer-actions {
-      margin-top: 24px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+    .resource-card h3 {
+      font-family: Oswald;
+      margin: 0;
     }
 
-    .cta-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 50px;
-      padding: 0 20px;
-      border: 1px solid var(--accent-dark);
-      background: rgba(0, 0, 0, 0.18);
-      color: var(--text);
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      font-weight: 700;
-      transition: 0.2s ease;
-      backdrop-filter: blur(2px);
-    }
-
-    .cta-btn:hover {
-      background: var(--accent-dark);
-      color: var(--bg);
-    }
-
-    .footer-note {
-      margin-top: 18px;
+    .resource-copy {
+      margin: 10px 0;
       color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.6;
     }
 
-    @media (max-width: 767px) {
-      .wrap {
-        width: min(var(--max), calc(100% - 28px));
-      }
-
-      .launch-banner {
-        font-size: 10px;
-        letter-spacing: 0.16em;
-        padding: 9px 10px;
-      }
-
-      .hero {
-        min-height: 92svh;
-      }
-
-      .hero-inner {
-        min-height: 92svh;
-        padding: 78px 0 30px;
-      }
-
-      .hero h1 {
-        font-size: 4.4rem;
-      }
-
-      .hero-sub {
-        margin-top: 14px;
-        font-size: 1rem;
-        line-height: 1.3;
-        max-width: 330px;
-      }
-
-      .image-break {
-        height: 46vh;
-      }
-
-      .image-break img {
-        object-position: center 34%;
-      }
-
-      .section {
-        padding: 46px 0;
-      }
-
-      .statement {
-        font-size: 2.2rem;
-        line-height: 0.98;
-      }
-
-      .support {
-        margin-top: 18px;
-        font-size: 0.98rem;
-        line-height: 1.45;
-        max-width: 290px;
-      }
-
-      .trailhead-label {
-        font-size: 11px;
-        letter-spacing: 0.24em;
-      }
-
-      .trail-link {
-        padding: 16px 0;
-        font-size: 1.15rem;
-      }
-
-      .footer-actions {
-        margin-top: 20px;
-      }
-
-      .cta-btn,
-      .footer-actions .cta-btn {
-        width: 100%;
-        min-height: 46px;
-        font-size: 10px;
-        letter-spacing: 0.16em;
-      }
-
-      .footer-note {
-        font-size: 0.95rem;
-      }
+    .resource-button {
+      display: block;
+      text-align: center;
+      padding: 12px;
+      border: 1px solid var(--accent-dark);
+      text-transform: uppercase;
+      font-family: Oswald;
+      font-size: 12px;
     }
 
-    @media (min-width: 768px) {
-      .hero-inner {
-        padding: 128px 0 62px;
-      }
+    .resource-disclaimer {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      text-align: center;
+      color: var(--muted);
+    }
 
-      .eyebrow,
-      .trailhead-label {
-        letter-spacing: 0.35em;
-      }
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.8rem;
+      color: #8a7d6b;
+    }
+
+    @media(max-width:768px){
+      .resource-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 3.5rem; }
     }
   </style>
 </head>
+
 <body>
-  <div class="launch-banner">Launching May 2026 — Registration open</div>
 
-  <section class="hero">
-    <div class="poster"></div>
+<div class="launch-banner">Launching May 2026 — Registration open</div>
 
-    <video autoplay muted loop playsinline preload="auto">
-      <source src="send-it-hero.mp4" type="video/mp4" />
-    </video>
+<section class="hero">
+  <video autoplay muted loop playsinline>
+    <source src="send-it-hero.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
 
-    <div class="overlay-dark"></div>
-
-    <div class="wrap hero-inner">
-      <div>
-        <p class="eyebrow">Austin Mountain Biking Life Group</p>
-
-        <h1>Send It</h1>
-
-        <p class="hero-sub">
-          Trusting God through steep drops, switchbacks, and life’s rough terrain.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section bg-2">
-    <div class="wrap">
-      <p class="statement">
-        We ride.<br />
-        We fellowship.<br />
-        We send it to God in prayer.
-      </p>
-
-      <p class="support">
-        Some rides are smooth.<br />
-        Some are not.<br />
-        Same with life.
+  <div class="wrap hero-inner">
+    <div>
+      <h1>Send It</h1>
+      <p class="hero-sub">
+        Trusting God through steep drops, switchbacks, and life’s rough terrain.
       </p>
     </div>
-  </section>
-  
-  <section class="image-break">
-    <img src="send-it-woods.jpg" alt="Mountain biking through the woods" />
-  </section>
+  </div>
+</section>
 
- <section class="section bg-3">
+<section class="section bg-2">
   <div class="wrap">
+    <p class="statement">
+      We ride.<br>
+      We fellowship.<br>
+      We send it to God in prayer.
+    </p>
 
+    <p class="support">
+      Some rides are smooth.<br>
+      Some are not.<br>
+      Same with life.
+    </p>
+  </div>
+</section>
+
+<section class="image-break">
+  <img src="send-it-woods.jpg">
+</section>
+
+<section class="section bg-3">
+  <div class="wrap">
     <p class="statement">
       Every rider is on a trail.<br>
       Some are in a climb.<br>
@@ -433,68 +250,64 @@
       Some are just trying to stay upright.
     </p>
 
-    <p style="margin-top: 32px; max-width: 680px; color: #dccbb8; line-height: 1.5;">
+    <p class="support">
       Wherever you are in life,<br>
       you don't have to ride it alone.
     </p>
 
-    <p style="margin-top: 20px; font-family: Oswald, sans-serif; font-size: 1.5rem; text-transform: uppercase;">
+    <p style="margin-top:20px; font-family:Oswald; text-transform:uppercase;">
       Come ride with us.
     </p>
-
   </div>
 </section>
 
-  <section class="section">
-    <div class="wrap">
-      <p class="trailhead-label">Choose your trailhead to register</p>
+<section class="section">
+  <div class="wrap">
+    <p class="trailhead-label">Choose your trailhead to register</p>
 
-      <div class="trailhead-list">
-        <a
-          class="trail-link"
-          href="https://www.life.church/lifegroups/search/lifegroup/325533ef-9949-4ce8-8774-20c3bc4a1f92/?campuses%5B0%5D=atn&topic%5B0%5D=Discipleship&groupTypes=LifeGroups"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span>Life.Church Austin</span>
-          <span>→</span>
-        </a>
+    <a class="trail-link" href="https://www.life.church/lifegroups/search/lifegroup/325533ef-9949-4ce8-8774-20c3bc4a1f92/?campuses%5B0%5D=atn" target="_blank">
+      <span>Life.Church Austin</span><span>→</span>
+    </a>
 
-        <a
-          class="trail-link"
-          href="https://my.redrockschurch.com/SmallGroupRegister?GroupGuid=3e1e5614-869e-47f7-bb72-3c8bdc34ac94"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span>Red Rocks Austin</span>
-          <span>→</span>
-        </a>
+    <a class="trail-link" href="https://my.redrockschurch.com/SmallGroupRegister?GroupGuid=3e1e5614-869e-47f7-bb72-3c8bdc34ac94" target="_blank">
+      <span>Red Rocks Austin</span><span>→</span>
+    </a>
+  </div>
+</section>
+
+<section class="section bg-2">
+  <div class="wrap">
+    <h2 class="resources-title">Armor Up!</h2>
+
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h3>Scripture</h3>
+        <p class="resource-copy">Stay rooted in the Word.</p>
+        <a class="resource-button" href="https://www.youversion.com/bible-app" target="_blank">Open YouVersion</a>
+      </div>
+
+      <div class="resource-card">
+        <h3>Recommended Reads</h3>
+        <p class="resource-copy">Books worth bringing into your daily walk.</p>
+        <a class="resource-button" href="https://www.amazon.com/hz/wishlist/ls/18YWFC5TKCVFV?ref_=wl_share" target="_blank">Browse Books</a>
+      </div>
+
+      <div class="resource-card">
+        <h3>Recommended Gear</h3>
+        <p class="resource-copy">Essential gear for the trail.</p>
+        <a class="resource-button" href="https://www.amazon.com/hz/wishlist/ls/15F8QG4G0UVK3?ref_=wl_share" target="_blank">Shop Gear</a>
       </div>
     </div>
-  </section>
 
-  <section class="section bg-2">
-    
-      <div class="footer-actions">
-        <a
-          class="cta-btn"
-          href="https://www.youversion.com/bible-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Armor Up!
-        </a>
+    <p class="resource-disclaimer">
+      Any commission earned through these affiliate links will be used to advance the Kingdom of God through this group or one of the churches listed above.
+    </p>
+  </div>
+</section>
 
-        <a
-          class="cta-btn"
-          href="https://amzn.to/4tyqv0U"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Book Recommendation - Free Me From Me by Ryan Wekenman
-        </a>
-      </div>
-    </div>
-  </section>
+<footer>
+  © 2026 Send It — Austin Mountain Biking Life Group
+</footer>
+
 </body>
 </html>
