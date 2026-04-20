@@ -6,7 +6,7 @@
   <title>Send It | Austin Mountain Biking Life Group</title>
   <meta
     name="description"
-    content="Send It is an Austin mountain biking life group for people from Life.Church and Red Rocks who want to ride, talk about life, and trust God through steep drops, switchbacks, and rough terrain."
+    content="Send It is an Austin mountain biking life group for people from Life.Church and Red Rocks who want to ride, fellowship, and trust God through steep drops, switchbacks, and rough terrain."
   />
   <meta property="og:title" content="Send It" />
   <meta
@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   />
 
@@ -60,8 +60,26 @@
     }
 
     .wrap {
-      width: min(var(--max), calc(100% - 40px));
+      width: min(var(--max), calc(100% - 48px));
       margin: 0 auto;
+    }
+
+    .launch-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 9999;
+      background: rgba(11, 10, 8, 0.82);
+      color: var(--accent);
+      text-align: center;
+      font-family: "Oswald", sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
     }
 
     .hero {
@@ -82,8 +100,7 @@
 
     .hero .poster {
       background:
-        linear-gradient(180deg, rgba(8,7,6,0.28), rgba(8,7,6,0.55), rgba(8,7,6,0.9)),
-        radial-gradient(circle at top, rgba(220,171,92,0.12), transparent 35%),
+        linear-gradient(180deg, rgba(8, 7, 6, 0.18), rgba(8, 7, 6, 0.42), rgba(8, 7, 6, 0.88)),
         #000;
       z-index: 0;
     }
@@ -92,8 +109,8 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at top, rgba(220,171,92,0.16), transparent 34%),
-        linear-gradient(180deg, rgba(8,7,6,0.18), rgba(8,7,6,0.48), rgba(8,7,6,0.90));
+        radial-gradient(circle at top, rgba(220, 171, 92, 0.12), transparent 34%),
+        linear-gradient(180deg, rgba(8, 7, 6, 0.08), rgba(8, 7, 6, 0.28) 42%, rgba(8, 7, 6, 0.88) 100%);
       z-index: 2;
     }
 
@@ -103,15 +120,16 @@
       min-height: 100svh;
       display: flex;
       align-items: flex-end;
-      padding: 120px 0 72px;
+      padding: 122px 0 42px;
     }
 
-    .eyebrow {
+    .eyebrow,
+    .trailhead-label {
       margin: 0;
       color: var(--accent);
       font-size: 12px;
       font-weight: 800;
-      letter-spacing: 0.35em;
+      letter-spacing: 0.28em;
       text-transform: uppercase;
     }
 
@@ -124,65 +142,53 @@
     }
 
     .hero h1 {
-      margin: 18px 0 0;
-      font-size: clamp(4rem, 12vw, 8.5rem);
+      margin: 14px 0 0;
+      font-size: clamp(3.8rem, 13vw, 8.5rem);
       line-height: 0.9;
       letter-spacing: -0.04em;
       font-weight: 700;
     }
 
     .hero-sub {
-      margin: 24px 0 0;
-      max-width: 850px;
-      font-size: clamp(1.2rem, 3vw, 2rem);
-      line-height: 1.45;
+      margin: 18px 0 0;
+      max-width: 760px;
+      font-size: clamp(1.05rem, 4.5vw, 2rem);
+      line-height: 1.35;
       color: #f3e7d6;
       font-weight: 500;
     }
 
-    .hero-mini {
-      margin-top: 28px;
-      max-width: 720px;
-      color: var(--muted);
-      font-size: clamp(1rem, 2vw, 1.3rem);
-      line-height: 1.7;
+    .image-break {
+      position: relative;
+      height: 72vh;
+      overflow: hidden;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: #000;
     }
 
-    .hero-mini p {
-      margin: 0 0 10px;
+    .image-break img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 38%;
+      transform: scale(1.02);
     }
 
-    .hero-actions {
-      margin-top: 32px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .cta-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 52px;
-      padding: 0 22px;
-      border: 1px solid var(--accent-dark);
-      background: rgba(0, 0, 0, 0.25);
-      color: var(--text);
-      font-size: 12px;
-      letter-spacing: 0.22em;
-      font-weight: 700;
-      transition: 0.2s ease;
-      backdrop-filter: blur(2px);
-    }
-
-    .cta-btn:hover {
-      background: var(--accent-dark);
-      color: var(--bg);
+    .image-break::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(11, 10, 8, 0.1), rgba(11, 10, 8, 0.25), rgba(11, 10, 8, 0.72)),
+        radial-gradient(circle at center, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.28));
     }
 
     .section {
       border-top: 1px solid var(--line);
-      padding: 72px 0;
+      padding: 64px 0;
     }
 
     .section.bg-2 {
@@ -195,32 +201,23 @@
 
     .statement {
       margin: 0;
-      max-width: 950px;
-      font-size: clamp(2.2rem, 7vw, 4.5rem);
-      line-height: 1.05;
+      max-width: 980px;
+      font-size: clamp(2rem, 6.5vw, 4.5rem);
+      line-height: 1.02;
       letter-spacing: -0.03em;
       font-weight: 700;
     }
 
     .support {
-      margin: 28px 0 0;
-      max-width: 650px;
+      margin: 22px 0 0;
+      max-width: 700px;
       color: var(--muted-2);
-      font-size: clamp(1.15rem, 2.5vw, 1.6rem);
-      line-height: 1.7;
-    }
-
-    .trailhead-label {
-      margin: 0;
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
+      font-size: clamp(1.05rem, 3.8vw, 1.6rem);
+      line-height: 1.55;
     }
 
     .trailhead-list {
-      margin-top: 28px;
+      margin-top: 22px;
     }
 
     .trail-link {
@@ -228,11 +225,11 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      padding: 20px 0;
+      padding: 18px 0;
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
       color: var(--text);
-      font-size: clamp(1.5rem, 4vw, 3rem);
+      font-size: clamp(1.35rem, 4vw, 3rem);
       line-height: 1.05;
       letter-spacing: -0.02em;
       font-weight: 700;
@@ -240,7 +237,7 @@
     }
 
     .trail-link + .trail-link {
-      margin-top: 10px;
+      margin-top: 12px;
     }
 
     .trail-link:hover {
@@ -249,13 +246,42 @@
 
     .trail-link span:last-child {
       color: var(--accent);
+      flex-shrink: 0;
     }
 
     .footer-actions {
-      margin-top: 30px;
+      margin-top: 24px;
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 20px;
+      border: 1px solid var(--accent-dark);
+      background: rgba(0, 0, 0, 0.18);
+      color: var(--text);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      font-weight: 700;
+      transition: 0.2s ease;
+      backdrop-filter: blur(2px);
+    }
+
+    .cta-btn:hover {
+      background: var(--accent-dark);
+      color: var(--bg);
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.6;
     }
 
     @media (max-width: 767px) {
@@ -263,31 +289,98 @@
         width: min(var(--max), calc(100% - 28px));
       }
 
+      .launch-banner {
+        font-size: 10px;
+        letter-spacing: 0.16em;
+        padding: 9px 10px;
+      }
+
+      .hero {
+        min-height: 92svh;
+      }
+
       .hero-inner {
-        padding: 108px 0 44px;
+        min-height: 92svh;
+        padding: 78px 0 30px;
+      }
+
+      .hero h1 {
+        font-size: 4.4rem;
+      }
+
+      .hero-sub {
+        margin-top: 14px;
+        font-size: 1rem;
+        line-height: 1.3;
+        max-width: 330px;
+      }
+
+      .image-break {
+        height: 46vh;
+      }
+
+      .image-break img {
+        object-position: center 34%;
       }
 
       .section {
-        padding: 54px 0;
+        padding: 46px 0;
+      }
+
+      .statement {
+        font-size: 2.2rem;
+        line-height: 0.98;
+      }
+
+      .support {
+        margin-top: 18px;
+        font-size: 0.98rem;
+        line-height: 1.45;
+        max-width: 290px;
+      }
+
+      .trailhead-label {
+        font-size: 11px;
+        letter-spacing: 0.24em;
       }
 
       .trail-link {
-        padding: 18px 0;
+        padding: 16px 0;
+        font-size: 1.15rem;
+      }
+
+      .footer-actions {
+        margin-top: 20px;
       }
 
       .cta-btn,
       .footer-actions .cta-btn {
         width: 100%;
+        min-height: 46px;
+        font-size: 10px;
+        letter-spacing: 0.16em;
+      }
+
+      .footer-note {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hero-inner {
+        padding: 128px 0 62px;
       }
 
       .eyebrow,
       .trailhead-label {
-        letter-spacing: 0.28em;
+        letter-spacing: 0.35em;
       }
     }
   </style>
 </head>
 <body>
+  <div class="launch-banner">Launching May 2026 — Registration open</div>
+
   <section class="hero">
     <div class="poster"></div>
 
@@ -306,41 +399,20 @@
         <p class="hero-sub">
           Trusting God through steep drops, switchbacks, and life’s rough terrain.
         </p>
-
-        <div class="hero-mini">
-          <p>This is not just a study.</p>
-          <p>This is a riding community.</p>
-        </div>
-
-        <div class="hero-actions">
-          <a
-            class="cta-btn"
-            href="https://www.life.church/lifegroups/search/lifegroup/325533ef-9949-4ce8-8774-20c3bc4a1f92/?campuses%5B0%5D=atn&topic%5B0%5D=Discipleship&groupTypes=LifeGroups"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Life.Church Austin
-          </a>
-
-          <a
-            class="cta-btn"
-            href="https://my.redrockschurch.com/SmallGroupRegister?GroupGuid=3e1e5614-869e-47f7-bb72-3c8bdc34ac94"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Red Rocks Austin
-          </a>
-        </div>
       </div>
     </div>
+  </section>
+
+  <section class="image-break">
+    <img src="send-it-woods.jpg" alt="Mountain biking through the woods" />
   </section>
 
   <section class="section bg-2">
     <div class="wrap">
       <p class="statement">
         We ride.<br />
-        We talk about life.<br />
-        We trust God through it.
+        We fellowship.<br />
+        We send it to God in prayer.
       </p>
 
       <p class="support">
@@ -369,7 +441,7 @@
 
   <section class="section">
     <div class="wrap">
-      <p class="trailhead-label">Choose your trailhead</p>
+      <p class="trailhead-label">Choose your trailhead to register</p>
 
       <div class="trailhead-list">
         <a
@@ -395,23 +467,13 @@
     </div>
   </section>
 
-  <section class="section bg-3">
-    <div class="wrap">
-      <p class="statement">
-        We meet.<br />
-        We ride.<br />
-        We talk.<br />
-        We send it to God in prayer.
-      </p>
-    </div>
-  </section>
-
   <section class="section bg-2">
     <div class="wrap">
       <p class="statement">
-        You do not need to have it all figured out.<br />
-        You just need to show up.
+        You do not need to have it figured out.
       </p>
+
+      <p class="footer-note">Wherever you are, come ride with us.</p>
 
       <div class="footer-actions">
         <a
